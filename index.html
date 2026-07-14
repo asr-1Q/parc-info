@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parc Info</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+
+  <div id="screen-home" data-active="true">
+    <h1>Parc Info</h1>
+    <div id="noFileState">
+      <p>Aucune fiche en cours.</p>
+      <button id="btnNewFile">Créer un nouveau fichier</button>
+    </div>
+    <div id="draftState" class="hidden">
+      <p id="draftEtab"></p>
+      <p id="draftCount"></p>
+      <button id="btnContinue">Continuer la saisie</button>
+      <button id="btnFinishHome">Terminer et générer le fichier</button>
+      <button id="btnDiscard">Supprimer la fiche</button>
+    </div>
+  </div>
+
+  <div id="screen-setup" data-active="false">
+    <h2>Nouvelle fiche</h2>
+    <label>Établissement</label>
+    <input id="setupEtablissement" placeholder="Ex : ENSET Douala">
+    <label>Salle</label>
+    <input id="setupEmplacement" placeholder="Ex : Salle Multimédia 1">
+    <label>Préfixe</label>
+    <input id="setupPrefix" placeholder="Ex : IPN">
+    <label>N° de départ</label>
+    <input id="setupStartNum" type="number" placeholder="1">
+    <button id="btnStartFile">Démarrer</button>
+    <button id="btnBackFromSetup">Retour</button>
+  </div>
+
+  <div id="screen-form" data-active="false">
+    <h2 id="formContext"></h2>
+    <p>Prochain N° : <span id="regBadge"></span></p>
+
+    <label>Type d'équipement</label>
+    <select id="f_equipement" required>
+      <option value="">-- Type d'équipement --</option>
+      <option>Clavier</option>
+      <option>Souris</option>
+      <option>Unité Centrale</option>
+      <option>Ecran</option>
+      <option>Ncomputing</option>
+      <option>Onduleur</option>
+      <option>Parafoudre</option>
+      <option>Autre</option>
+    </select>
+
+    <label>Nom Utilisateur</label>
+    <input id="f_nomUtilisateur" placeholder="Ex : PC12">
+    <label>Numéro de Série</label>
+    <input id="f_numeroSerie" placeholder="Numéro de Série">
+    <label>Modèle</label>
+    <input id="f_modele" placeholder="Modèle">
+    <label>Marque</label>
+    <input id="f_marque" placeholder="Marque">
+    <label>Fabricant</label>
+    <input id="f_fabricant" placeholder="Fabricant">
+    <label>Année de Fabrication</label>
+    <input id="f_annee" type="number" placeholder="Année de Fabrication">
+    <label>Caractéristiques d'entrée</label>
+    <input id="f_caracEntree" placeholder="Caractéristiques d'entrée">
+    <label>Types</label>
+    <input id="f_types" placeholder="Types">
+
+    <label>Etat</label>
+    <select id="f_etat">
+      <option value="">-- Etat --</option>
+      <option>Neuf</option>
+      <option>Occasion</option>
+    </select>
+
+    <label>Date d'achat</label>
+    <input id="f_dateAchat" type="date">
+    <label>Rétrofit (année)</label>
+    <input id="f_retrofit" placeholder="Rétrofit (année)">
+
+    <label>Statut Actuel</label>
+    <select id="f_statut">
+      <option value="">-- Statut --</option>
+      <option>Okay</option>
+      <option>En panne</option>
+      <option>Hors service</option>
+    </select>
+
+    <label>Disponibilité</label>
+    <select id="f_disponibilite">
+      <option value="">-- Disponibilité --</option>
+      <option>Oui</option>
+      <option>Non</option>
+    </select>
+
+    <label>Taux d'occupation</label>
+    <input id="f_taux" type="number" step="0.1" min="0" max="1" placeholder="0 à 1">
+
+    <label>Protégé</label>
+    <select id="f_protege">
+      <option value="">-- Protégé --</option>
+      <option>Oui</option>
+      <option>Non</option>
+    </select>
+
+    <label>Date d'entretien</label>
+    <input id="f_dateEntretien" type="date">
+    <label>Prochaine Entretien</label>
+    <input id="f_prochainEntretien" type="date">
+    <label>Nbre de maintenances</label>
+    <input id="f_nbreMaintenances" type="number">
+    <label>Caractéristiques Actuelles</label>
+    <input id="f_caracActuelles" placeholder="Caractéristiques Actuelles">
+    <label>Date de Sortie</label>
+    <input id="f_dateSortie" type="date">
+    <label>Donneur d'ordre</label>
+    <input id="f_donneurOrdre" placeholder="Donneur d'ordre">
+    <label>Commentaire</label>
+    <textarea id="f_commentaire" rows="2" placeholder="Commentaire"></textarea>
+
+    <p id="dupAlert" class="hidden">⚠ Doublon avec <span id="dupTarget"></span></p>
+
+    <button id="btnAddEquipment">Ajouter l'équipement</button>
+
+    <div id="sessionList"></div>
+
+    <button id="btnBackFromForm">Retour</button>
+  </div>
+
+  <div id="screen-done" data-active="false">
+    <h2>Terminé</h2>
+    <p id="doneSummary"></p>
+    <button id="btnBackHomeFromDone">Retour à l'accueil</button>
+    <button id="btnClearAfterDone">Vider la fiche</button>
+  </div>
+
+  <script src="vendor/exceljs.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

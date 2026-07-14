@@ -1,0 +1,42 @@
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --border: #e0dcd3;
+  --text: #2a2622;
+  --text-muted: #8a8478;
+  --accent: #8a5a3b;
+  --accent-dark: #6e4630;
+  --danger: #b3432b;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 20px;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+h1 { font-size: 24px; margin: 0 0 4px; }
+h2 { font-size: 19px; margin: 0 0 16px; }
+
+[data-active="false"] { display: none; }
+.hidden { display: none !important; }
+
+#noFileState p, #draftState p { color: var(--text-muted); margin: 4px 0; }
+
+#draftState {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+#draftEtab { font-weight: 600; color: var(--text); font-size: 16px; }

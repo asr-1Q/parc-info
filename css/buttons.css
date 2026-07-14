@@ -1,0 +1,34 @@
+button {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  margin: 4px 4px 4px 0;
+  transition: background .12s, border-color .12s;
+}
+
+button:hover { background: var(--bg); }
+button:active { transform: translateY(1px); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+#btnNewFile, #btnStartFile, #btnAddEquipment, #btnFinishHome {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+#btnNewFile:hover, #btnStartFile:hover, #btnAddEquipment:hover, #btnFinishHome:hover {
+  background: var(--accent-dark);
+}
+
+#btnDiscard, #btnClearAfterDone {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+#btnDiscard:hover, #btnClearAfterDone:hover {
+  background: #fbeae6;
+}
