@@ -3,6 +3,7 @@ import { idbGet, idbSet, idbGetAll, idbDelete, idbClear } from "./js/database.js
 import { FORM_IDS, readForm, clearForm } from "./js/form.js";
 import { isDuplicateSerial, validateRequired, debounce } from "./js/validation.js";
 import { buildWorkbook, downloadWorkbook } from "./js/exportExcel.js";
+import { extractScreenSizeFromModel } from "./js/helpers.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
   refreshIcons();
@@ -39,6 +40,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     "input",
     debounce(checkDuplicateSerial, 250)
   );
+
+  // Auto-remplissage de la taille d'écran (ex: "Ecran 24''") à partir du modèle saisi,
+  // uniquement quand l'équipement sélectionné est "Ecran" et sans écraser une saisie manuelle.
+  document.getElementById("f_modele").addEventListener("input", fillScreenSizeFromModel);
+  document.getElementById("f_equipement").addEventListener("change", fillScreenSizeFromModel);
 
   document.getElementById("btnAddEquipment").addEventListener("click", async (e) => {
     e.preventDefault();
@@ -206,4 +212,16 @@ async function renderSessionList() {
   } catch (err) {
     console.error("renderSessionList:", err);
   }
+}
+
+function fillScreenSizeFromModel() {
+  const equip = document.getElementById("f_equipement").value;
+  if (equip !== "Ecran") return;
+
+  const modele = document.getElementById("f_modele").value.trim();
+  const typesEl = document.getElementById("f_types");
+  if (typesEl.value) return; // ne jamais écraser une saisie manuelle
+
+  const size = extractScreenSizeFromModel(modele);
+  if (size) typesEl.value = `Ecran ${size}''`;
 }
