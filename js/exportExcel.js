@@ -65,8 +65,11 @@ export async function buildWorkbook(equipments) {
       }
       let v = item[col.key];
       if (v === undefined || v === null || v === "") { cell.value = "/"; return; }
-      if (["annee", "nbreMaintenances", "taux", "disponibilite"].includes(col.key) && !isNaN(Number(v))) {
+      if (["annee", "nbreMaintenances", "taux"].includes(col.key) && !isNaN(Number(v))) {
         v = Number(v);
+      }
+      if (col.key === "disponibilite" && !isNaN(Number(v))) {
+        v = Number(v) / 100; // la cellule est en format pourcentage (attend 0-1, pas 0-100)
       }
       cell.value = v;
     });
