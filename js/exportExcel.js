@@ -65,7 +65,7 @@ export async function buildWorkbook(equipments) {
       }
       let v = item[col.key];
       if (v === undefined || v === null || v === "") { cell.value = "/"; return; }
-      if (["annee", "nbreMaintenances", "taux"].includes(col.key) && !isNaN(Number(v))) {
+      if (["annee", "nbreMaintenances", "taux", "disponibilite"].includes(col.key) && !isNaN(Number(v))) {
         v = Number(v);
       }
       cell.value = v;
