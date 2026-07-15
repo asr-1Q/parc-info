@@ -4,9 +4,13 @@ import { FORM_IDS, readForm, clearForm } from "./js/form.js";
 import { isDuplicateSerial, validateRequired, debounce } from "./js/validation.js";
 import { buildWorkbook, downloadWorkbook } from "./js/exportExcel.js";
 import { extractScreenSizeFromModel } from "./js/helpers.js";
+import { loadKnownEquipments, lookupKnownEquipment } from "./js/knownEquipment.js";
+
+let knownEquipments = {};
 
 document.addEventListener("DOMContentLoaded", async () => {
   refreshIcons();
+  knownEquipments = await loadKnownEquipments();
   await refreshHome();
 
   document.getElementById("btnNewFile").addEventListener("click", () => showScreen("setup"));
@@ -17,6 +21,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const emplacement = document.getElementById("setupEmplacement").value.trim();
     const prefix = document.getElementById("setupPrefix").value.trim() || "REG";
     const startNum = parseInt(document.getElementById("setupStartNum").value, 10) || 1;
+    const defaultStatut = document.getElementById("setupDefaultStatut").value;
+    const defaultDispo = document.getElementById("setupDefaultDispo").value;
+    const defaultProtege = document.getElementById("setupDefaultProtege").value;
+    const defaultFabricant = document.getElementById("setupDefaultFabricant").value.trim().toUpperCase();
+    const defaultTaux = document.getElementById("setupDefaultTaux").value;
 
     if (!etablissement || !emplacement) {
       alert("Renseigne au moins l'établissement et la salle.");
@@ -24,7 +33,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-      await idbSet("meta", "currentFile", { etablissement, emplacement, prefix, nextNumber: startNum });
+      await idbSet("meta", "currentFile", {
+        etablissement, emplacement, prefix, nextNumber: startNum,
+        defaultStatut, defaultDispo, defaultProtege, defaultFabricant, defaultTaux,
+      });
       await enterFormScreen();
     } catch (err) {
       alert("Erreur de sauvegarde : " + err.message);
@@ -36,15 +48,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     showScreen("home");
   });
 
+  document.getElementById("f_equipement").addEventListener("change", toggleEquipementAutre);
+  attachSerialSuggestions();
+
   document.getElementById("f_numeroSerie").addEventListener(
     "input",
-    debounce(checkDuplicateSerial, 250)
+    debounce(onSerialInput, 250)
   );
 
-  // Auto-remplissage de la taille d'écran (ex: "Ecran 24''") à partir du modèle saisi,
-  // uniquement quand l'équipement sélectionné est "Ecran" et sans écraser une saisie manuelle.
   document.getElementById("f_modele").addEventListener("input", fillScreenSizeFromModel);
   document.getElementById("f_equipement").addEventListener("change", fillScreenSizeFromModel);
+
+  document.getElementById("f_caracEntree").addEventListener("blur", () => {
+    const actuelles = document.getElementById("f_caracActuelles");
+    if (!actuelles.value) actuelles.value = document.getElementById("f_caracEntree").value;
+  });
 
   document.getElementById("btnAddEquipment").addEventListener("click", async (e) => {
     e.preventDefault();
@@ -106,6 +124,87 @@ document.addEventListener("DOMContentLoaded", async () => {
   showScreen("home");
 });
 
+function currentDefaults(meta) {
+  return {
+    statut: meta.defaultStatut, dispo: meta.defaultDispo, protege: meta.defaultProtege,
+    fabricant: meta.defaultFabricant, taux: meta.defaultTaux,
+  };
+}
+
+function toggleEquipementAutre() {
+  const val = document.getElementById("f_equipement").value;
+  const autreEl = document.getElementById("f_equipementAutre");
+  if (val === "Autre") {
+    autreEl.classList.remove("hidden");
+  } else {
+    autreEl.classList.add("hidden");
+    autreEl.value = "";
+  }
+}
+
+function attachSerialSuggestions() {
+  const input = document.getElementById("f_numeroSerie");
+  const box = document.getElementById("serialSuggestions");
+
+  const render = (filter) => {
+    const q = filter.trim().toUpperCase();
+    const keys = Object.keys(knownEquipments);
+    const matches = q ? keys.filter(k => k.includes(q)).slice(0, 8) : [];
+    box.innerHTML = "";
+    if (!matches.length) { box.classList.add("hidden"); return; }
+    matches.forEach(serial => {
+      const item = document.createElement("div");
+      item.className = "model-suggestion-item";
+      const info = knownEquipments[serial];
+      item.textContent = `${serial} — ${info.equipement || "?"}`;
+      item.addEventListener("mousedown", (e) => {
+        e.preventDefault();
+        input.value = serial;
+        box.classList.add("hidden");
+        applyKnownEquipment();
+      });
+      box.appendChild(item);
+    });
+    box.classList.remove("hidden");
+  };
+
+  input.addEventListener("input", () => render(input.value));
+  input.addEventListener("focus", () => render(input.value));
+  input.addEventListener("blur", () => setTimeout(() => box.classList.add("hidden"), 120));
+}
+
+function fillScreenSizeFromModel() {
+  const equip = document.getElementById("f_equipement").value;
+  if (equip !== "Ecran") return;
+  const modele = document.getElementById("f_modele").value.trim();
+  const typesEl = document.getElementById("f_types");
+  if (typesEl.value) return;
+  const size = extractScreenSizeFromModel(modele);
+  if (size) typesEl.value = `Ecran ${size}''`;
+}
+
+async function onSerialInput() {
+  await checkDuplicateSerial();
+  applyKnownEquipment();
+}
+
+function applyKnownEquipment() {
+  const serial = document.getElementById("f_numeroSerie").value.trim();
+  const alertBox = document.getElementById("knownAlert");
+  if (!serial) { alertBox.classList.add("hidden"); return; }
+
+  const known = lookupKnownEquipment(knownEquipments, serial);
+  if (!known) { alertBox.classList.add("hidden"); return; }
+
+  if (!document.getElementById("f_statut").value) document.getElementById("f_statut").value = known.statut || "";
+  if (!document.getElementById("f_etat").value) document.getElementById("f_etat").value = known.etat || "";
+  if (!document.getElementById("f_disponibilite").value) document.getElementById("f_disponibilite").value = known.disponibilite || "";
+  if (!document.getElementById("f_taux").value && known.taux !== undefined) document.getElementById("f_taux").value = known.taux;
+  if (!document.getElementById("f_commentaire").value) document.getElementById("f_commentaire").value = known.commentaire || "";
+
+  alertBox.classList.remove("hidden");
+}
+
 async function refreshHome() {
   const meta = await idbGet("meta", "currentFile");
   const noFileState = document.getElementById("noFileState");
@@ -130,7 +229,7 @@ async function enterFormScreen() {
   if (!meta) { showScreen("home"); return; }
   document.getElementById("formContext").textContent = `${meta.etablissement} — ${meta.emplacement}`;
   document.getElementById("regBadge").textContent = `${meta.prefix}${meta.nextNumber}`;
-  clearForm();
+  clearForm(currentDefaults(meta));
   await renderSessionList();
   showScreen("form");
 }
@@ -159,6 +258,11 @@ async function addEquipment() {
   const check = validateRequired({ equipement: equipEl.value });
   if (!check.valid) { alert(check.errors[0].message); equipEl.focus(); return; }
 
+  const equipVal = equipEl.value === "Autre"
+    ? document.getElementById("f_equipementAutre").value.trim().toUpperCase()
+    : equipEl.value;
+  if (equipEl.value === "Autre" && !equipVal) { alert("Précise le type d'équipement."); return; }
+
   const serialEl = document.getElementById("f_numeroSerie");
   const serialVal = serialEl.value.trim();
 
@@ -183,6 +287,7 @@ async function addEquipment() {
       etablissement: meta.etablissement,
       emplacement: meta.emplacement,
       ...data,
+      equipement: equipVal,
     };
 
     await idbSet("equipments", undefined, record);
@@ -191,7 +296,7 @@ async function addEquipment() {
     await idbSet("meta", "currentFile", meta);
 
     document.getElementById("regBadge").textContent = `${meta.prefix}${meta.nextNumber}`;
-    clearForm();
+    clearForm(currentDefaults(meta));
     await renderSessionList();
   } catch (err) {
     alert("Erreur lors de l'ajout : " + err.message);
@@ -212,16 +317,4 @@ async function renderSessionList() {
   } catch (err) {
     console.error("renderSessionList:", err);
   }
-}
-
-function fillScreenSizeFromModel() {
-  const equip = document.getElementById("f_equipement").value;
-  if (equip !== "Ecran") return;
-
-  const modele = document.getElementById("f_modele").value.trim();
-  const typesEl = document.getElementById("f_types");
-  if (typesEl.value) return; // ne jamais écraser une saisie manuelle
-
-  const size = extractScreenSizeFromModel(modele);
-  if (size) typesEl.value = `Ecran ${size}''`;
 }

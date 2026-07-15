@@ -1,0 +1,546 @@
+{
+  "CNC832BB1G": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage peu clair — Qualité d'affichage insuffisante"
+  },
+  "MJ17H9NL300687Y": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage peu clair — Qualité d'affichage insuffisante"
+  },
+  "MJ17H9NL201942K": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage peu clair — Qualité d'affichage insuffisante"
+  },
+  "CNC813PM71": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "CNK6430GVL": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "MJ17H9NL300677D": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "CNK7430KXN": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "MJ17H9WA124145V": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "CNG14700HF": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "CN-0P409N-74261-05E-2G7C": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "CN43521LHS": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "CN-0FP446-72872-7BQ-38MT": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran en stock hors service"
+  },
+  "CN-0G340H-64180-86P-0RMH-A00": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Affichage dégradé, traits visibles"
+  },
+  "MJ17H9NA126520T": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Affichage blanchâtre/jaunâtre"
+  },
+  "MJ1749NL300634W": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Affichage blanchâtre/jaunâtre"
+  },
+  "NUMÉRODESÉRIE": {
+    "equipement": "Équipement",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "État"
+  },
+  "CNC804RRQ1": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNC751Q9Y3": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNC832RB1L": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNC822RP3S": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNC804RR9J": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNC805QTRM": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNK8081C28": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNK8230T7N": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNC748QWF7": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNK7430NYD": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNC822RN54": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé"
+  },
+  "CNC822RN87": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran hors service"
+  },
+  "CNC823QH8X": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran hors service"
+  },
+  "707NDBP3B837": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran hors service"
+  },
+  "CNP514X0JY": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre — souris manquante au poste"
+  },
+  "CNK74212RS": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CNC822RNGS": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre — câble d'alimentation NComputing non fonctionnel"
+  },
+  "CNC822RNJY": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre — souris manquante au poste"
+  },
+  "CNC822RNJL": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CNC804RRPH": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CNC83RB1H": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CN42360KTM": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CNC804RRPY": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CNC64722RT": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CNC63306GM": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "MJ17H9NA121044N": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CN-OPM857-74261-85F-ALCA": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre / dégradé, écran fonctionnel"
+  },
+  "CNC905PVWJ": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran rayé (traits visibles)"
+  },
+  "CN-0C891H-72872-88S-194S-A00": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran rayé (traits visibles)"
+  },
+  "CN-OFP446-72872-82R-5EDL": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran rayé (traits visibles)"
+  },
+  "CN-06NK9J-74445-15G-172S": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran rayé (traits visibles)"
+  },
+  "CNC823QFLQ": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran rayé (traits visibles)"
+  },
+  "CN-0G340H-64180-86P-0TFH-A00": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran rayé (traits visibles)"
+  },
+  "CNC804RRPT": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran rayé (traits visibles)"
+  },
+  "3CQ8231S82": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran rayé (traits visibles)"
+  },
+  "CNC804RQ9D": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Affichage jaunâtre"
+  },
+  "CN4521KVF": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Problème de port VGA"
+  },
+  "CN-OP409N-74261-082-4JJB": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran endommagé / mal affiché"
+  },
+  "CN-OCC639-72872-63T-1RWT": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran endommagé / mal affiché"
+  },
+  "CN-OC891H-72872-86C-179L-A00": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran endommagé / mal affiché"
+  },
+  "CN-0YG613-71618-655-AC0L": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran endommagé / mal affiché"
+  },
+  "3CQ0430CFB": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran endommagé / mal affiché"
+  },
+  "MX-0C9536-74262-7B5-1R4S": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran endommagé / mal affiché"
+  },
+  "3CQ106BFSH": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran endommagé / mal affiché"
+  },
+  "3CQ135B2F2": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Affichage dégradé — Écran endommagé / mal affiché"
+  },
+  "CN-OC182J-7445-95P-A93U": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Affichage cassé"
+  },
+  "ETQ480W001146046F94310": {
+    "equipement": "Écran",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Non fonctionnel — Écran noir, non fonctionnel"
+  },
+  "GHZ200321GW": {
+    "equipement": "Laptop",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Ordinateur portable défectueux"
+  },
+  "PROBOOK430G2CMD51188R3": {
+    "equipement": "Laptop",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Ordinateur portable défectueux"
+  },
+  "CN-OCC280-71618-614-AMMS": {
+    "equipement": "Écran serveur",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Écran du serveur défectueux"
+  },
+  "CN-0G43H-7445-96C-002L": {
+    "equipement": "Écran serveur",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Écran du serveur défectueux"
+  },
+  "JJ5XJB2": {
+    "equipement": "serveur",
+    "statut": "En panne",
+    "etat": "Occasion",
+    "disponibilite": "Non",
+    "taux": 0.15,
+    "commentaire": "Défectueux — Serveur ne demarre plus "
+  }
+}

@@ -49,3 +49,9 @@ textarea { resize: vertical; }
 }
 .model-suggestion-item { padding: 8px 10px; cursor: pointer; font-size: 14px; }
 .model-suggestion-item:hover { background: var(--bg); }
+input[type="text"], input:not([type]), textarea {
+  text-transform: uppercase;
+}
+input[type="number"], input[type="date"], select {
+  text-transform: none;
+}

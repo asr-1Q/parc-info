@@ -15,3 +15,12 @@
   padding: 16px;
   box-shadow: var(--shadow);
 }
+#knownAlert {
+  background: #eef6ee;
+  border: 1px solid #4c8a4c;
+  color: #2f5a2f;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}

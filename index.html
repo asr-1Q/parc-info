@@ -36,6 +36,34 @@
     <input id="setupPrefix" placeholder="Ex : IPN">
     <label>N° de départ</label>
     <input id="setupStartNum" type="number" placeholder="1">
+
+    <label>Statut par défaut</label>
+    <select id="setupDefaultStatut">
+      <option value="">-- Aucun défaut --</option>
+      <option>Okay</option>
+      <option>En panne</option>
+      <option>Hors service</option>
+      <option>N/A</option>
+    </select>
+    <label>Disponibilité par défaut</label>
+    <select id="setupDefaultDispo">
+      <option value="">-- Aucun défaut --</option>
+      <option>Oui</option>
+      <option>Non</option>
+      <option>N/A</option>
+    </select>
+    <label>Protégé par défaut</label>
+    <select id="setupDefaultProtege">
+      <option value="">-- Aucun défaut --</option>
+      <option>Oui</option>
+      <option>Non</option>
+      <option>N/A</option>
+    </select>
+    <label>Fabricant par défaut</label>
+    <input id="setupDefaultFabricant" placeholder="Ex : Chine">
+    <label>Taux d'occupation par défaut (0 à 1)</label>
+    <input id="setupDefaultTaux" type="number" step="0.1" min="0" max="1" placeholder="Ex : 0.5">
+
     <button id="btnStartFile">Démarrer</button>
     <button id="btnBackFromSetup">Retour</button>
   </div>
@@ -54,13 +82,18 @@
       <option>Ncomputing</option>
       <option>Onduleur</option>
       <option>Parafoudre</option>
-      <option>Autre</option>
+      <option value="Autre">Saisir manuellement</option>
     </select>
+    <input id="f_equipementAutre" placeholder="Précise le type d'équipement" class="hidden">
 
     <label>Nom Utilisateur</label>
     <input id="f_nomUtilisateur" placeholder="Ex : PC12">
     <label>Numéro de Série</label>
-    <input id="f_numeroSerie" placeholder="Numéro de Série">
+    <span style="position:relative; display:block;">
+      <input id="f_numeroSerie" placeholder="Numéro de Série" autocomplete="off">
+      <div id="serialSuggestions" class="model-suggestions hidden"></div>
+    </span>
+    <p id="knownAlert" class="hidden">📋 Équipement déjà inventorié — champs pré-remplis, vérifie avant de valider.</p>
     <label>Modèle</label>
     <input id="f_modele" placeholder="Modèle">
     <label>Marque</label>
@@ -79,12 +112,8 @@
       <option value="">-- Etat --</option>
       <option>Neuf</option>
       <option>Occasion</option>
+      <option>N/A</option>
     </select>
-
-    <label>Date d'achat</label>
-    <input id="f_dateAchat" type="date">
-    <label>Rétrofit (année)</label>
-    <input id="f_retrofit" placeholder="Rétrofit (année)">
 
     <label>Statut Actuel</label>
     <select id="f_statut">
@@ -92,6 +121,7 @@
       <option>Okay</option>
       <option>En panne</option>
       <option>Hors service</option>
+      <option>N/A</option>
     </select>
 
     <label>Disponibilité</label>
@@ -99,6 +129,7 @@
       <option value="">-- Disponibilité --</option>
       <option>Oui</option>
       <option>Non</option>
+      <option>N/A</option>
     </select>
 
     <label>Taux d'occupation</label>
@@ -109,20 +140,11 @@
       <option value="">-- Protégé --</option>
       <option>Oui</option>
       <option>Non</option>
+      <option>N/A</option>
     </select>
 
-    <label>Date d'entretien</label>
-    <input id="f_dateEntretien" type="date">
-    <label>Prochaine Entretien</label>
-    <input id="f_prochainEntretien" type="date">
-    <label>Nbre de maintenances</label>
-    <input id="f_nbreMaintenances" type="number">
     <label>Caractéristiques Actuelles</label>
     <input id="f_caracActuelles" placeholder="Caractéristiques Actuelles">
-    <label>Date de Sortie</label>
-    <input id="f_dateSortie" type="date">
-    <label>Donneur d'ordre</label>
-    <input id="f_donneurOrdre" placeholder="Donneur d'ordre">
     <label>Commentaire</label>
     <textarea id="f_commentaire" rows="2" placeholder="Commentaire"></textarea>
 
