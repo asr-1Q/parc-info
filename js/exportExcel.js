@@ -16,6 +16,7 @@ const COLUMNS = [
   { key: "types",              header: "Types" },
   { key: "etat",               header: "Etat" },
   { key: "dateAchat",          header: "Date d'achat" },
+  { key: "retrofit",           header: "Rétrofit" },
   { key: "statut",             header: "Statut Actuel" },
   { key: "disponibilite",      header: "Disponibilité" },
   { key: "taux",               header: "Taux d'occupation" },
@@ -26,6 +27,7 @@ const COLUMNS = [
   { key: "dureeVie",           header: "Durée de Vie" },
   { key: "caracActuelles",     header: "Caractéristiques Actuelles" },
   { key: "dateSortie",         header: "Date de Sortie" },
+  { key: "donneurOrdre",       header: "Donneur d'ordre" },
   { key: "commentaire",        header: "Commentaire" },
 ];
 
